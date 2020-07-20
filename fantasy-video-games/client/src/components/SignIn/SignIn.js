@@ -20,10 +20,27 @@ const SingIn = () => {
         <div className="joinOuterContainer">
             <div className="joinInnerContainer">
                 <h1 className="heading">Sign in</h1>
-                <div><input placeholder="Name" className="joinInput" type="text" onChange={handleName}/></div>
-                <div><input placeholder="Room" className="joinInput mt-20" type="text" onChange={handleRoom}/></div>
-                <Link onClick={event => (!name || !room) ? event.preventDefault() : null} to={`/chat?name=${name}&room=${room}`}>
-                <button className="button mt-20" type="submit">Sign In</button>
+                <div>
+                    <input 
+                    placeholder="Name" 
+                    className="joinInput" 
+                    type="text" 
+                    onChange={handleName}/>
+                </div>
+                <div>
+                    <input 
+                    placeholder="Fantasy Video Games" 
+                    className="joinInput mt-20 disabled" 
+                    value="Fantasy Video Games" 
+                    type="text" 
+                    onClick={handleRoom}/>
+                </div>
+                <Link 
+                onClick={event => (!name || !room) ? event.preventDefault() : null} to={`/chat?name=${name}&room=${room}`}>
+                <button 
+                className="button mt-20" 
+                type="submit">Sign In
+                </button>
                 </Link>
             </div>
         </div>

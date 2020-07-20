@@ -1,0 +1,22 @@
+.jumbotron {
+    background-color: #1F2833;
+    color: #66FCF1;
+
+    
+}
+
+
+.display-4 {
+    font-size: 150px;
+    font-weight: bolder;
+}
+
+.btn {
+    margin: 2px;
+    background-color: #1f2833;
+    border-color: #45a29e;
+}
+
+body {
+    background-color: #1F2833;
+}
