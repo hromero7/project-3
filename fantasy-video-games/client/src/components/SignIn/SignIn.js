@@ -13,7 +13,7 @@ const SingIn = () => {
 
     function handleRoom(event) {
         event.preventDefault();
-        setRoom(event.target.value)
+        setRoom("Fantasy Video Games")
     }
 
     return(
@@ -25,13 +25,15 @@ const SingIn = () => {
                     placeholder="Name" 
                     className="joinInput" 
                     type="text" 
-                    onChange={handleName}/>
+                    onChange={handleName}
+                    onClick={handleRoom}/>
                 </div>
                 <div>
                     <input 
                     placeholder="Fantasy Video Games" 
                     className="joinInput mt-20 disabled" 
                     value="Fantasy Video Games" 
+                    default= "Fantasy Video Games"
                     type="text" 
                     onClick={handleRoom}/>
                 </div>
@@ -39,7 +41,9 @@ const SingIn = () => {
                 onClick={event => (!name || !room) ? event.preventDefault() : null} to={`/chat?name=${name}&room=${room}`}>
                 <button 
                 className="button mt-20" 
-                type="submit">Sign In
+                type="submit"
+                
+                >Sign In
                 </button>
                 </Link>
             </div>

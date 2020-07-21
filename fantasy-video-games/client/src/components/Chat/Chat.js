@@ -14,7 +14,7 @@ const Chat = ({ location }) => {
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
     const EndPoint = "localhost:3003";
-
+    
     useEffect(() => {
         const { name, room } = queryString.parse(location.search);
 
@@ -38,7 +38,7 @@ const Chat = ({ location }) => {
         socket.on('message', (message) => {
             setMessages(messages =>[...messages,message])
         })
-    }, [messages]);
+    }, []);
 
     //function for sending messages
     const sendMessage = (event) => {
@@ -54,7 +54,7 @@ const Chat = ({ location }) => {
         <div className="outerContainer">
             <div className="container">
                 <InfoBar room={room}/>
-                <Messages messages={messages}/>
+                <Messages messages={messages} name={name}/>
                 <Input message={message} setMessage={setMessage} sendMessage={sendMessage}/>
             </div>
         </div>

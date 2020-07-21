@@ -2,7 +2,7 @@ import React from 'react';
 
 import "./Message.css";
 
-const Message = ({ message: { user, text }, name }) => {
+const Message = ({ message: { text,user  }, name }) => {
     let isSentByCurrentUser = false;
 
     const trimmedName = name;
