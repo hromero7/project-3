@@ -1,15 +1,16 @@
 import React from 'react';
 import NavBar from '../../components/NavBar';
 import Jumbotron from '../../components/Jumbotron';
-import './style.css';
+import StoreContainer from '../../components/StoreContainer';
 
-const Home = () => {
+const Store = () => {
   return (
     <div>
       <NavBar />
       <Jumbotron />
+      <StoreContainer />
     </div>
   );
 };
 
-export default Home;
+export default Store;
