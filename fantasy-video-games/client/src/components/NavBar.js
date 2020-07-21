@@ -4,6 +4,7 @@ import LoginModal from "react-awesome-modal";
 import SignupModal from "react-awesome-modal";
 import Login from "./Login";
 import Signup from "./Signup";
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
 
@@ -46,15 +47,21 @@ const NavBar = () => {
   </button>
   <div className="collapse navbar-collapse" id="navbarNav">
     <ul className="navbar-nav">
+    <Link to='/'>
       <li className="nav-item active">
         <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
       </li>
+      </Link>
+      <Link to="/league">
       <li className="nav-item">
-        <a className="nav-link" href="#">Betting</a>
+        <a className="nav-link" href="#">League</a>
       </li>
+      </Link>
+      <Link to="/store">
       <li className="nav-item">
         <a className="nav-link" href="#">Store</a>
       </li>
+      </Link>
       <li className="nav-item">
         <a className="nav-link" href="#">Profile</a>
       </li>
