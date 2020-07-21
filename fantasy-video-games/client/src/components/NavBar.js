@@ -6,6 +6,8 @@ import Login from "./Login";
 import Signup from "./Signup";
 import { Link } from "react-router-dom";
 
+
+
 const NavBar = () => {
 
 // setting state for both login and sign up modals
@@ -47,15 +49,19 @@ const NavBar = () => {
   </button>
   <div className="collapse navbar-collapse" id="navbarNav">
     <ul className="navbar-nav">
+
     <Link to="/">
       <li className="nav-item active">
         <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
       </li>
     </Link>
-    <Link to="/betting">
+  
+    <Link to="/league">
+
       <li className="nav-item">
-        <a className="nav-link" href="#">Betting</a>
+        <a className="nav-link" href="#">League</a>
       </li>
+
     </Link>
     <Link to="store">
       <li className="nav-item">
@@ -63,6 +69,7 @@ const NavBar = () => {
       </li>
     </Link>
     <Link to="/profile">
+
       <li className="nav-item">
         <a className="nav-link" href="#">Profile</a>
       </li>
