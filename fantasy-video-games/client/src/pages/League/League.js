@@ -5,7 +5,7 @@ import "./league.css";
 const League = () => {
     return (
         <div>
-            <p>Hello</p>
+            <p>Hello World</p>
         </div>
     )
 }
