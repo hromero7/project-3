@@ -3,7 +3,7 @@ import NavBar from '../../components/NavBar';
 import Jumbotron from '../../components/Jumbotron';
 import StoreContainer from '../../components/StoreContainer';
 
-const Store = () => {
+const Shop = () => {
   return (
     <div>
       <NavBar />
@@ -13,4 +13,4 @@ const Store = () => {
   );
 };
 
-export default Store;
+export default Shop;
