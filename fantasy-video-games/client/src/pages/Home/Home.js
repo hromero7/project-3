@@ -1,14 +1,13 @@
-import React from "react";
-import Jumbotron from "../../components/Jumbotron";
-import "./style.css";
+import React from 'react';
+import Jumbotron from '../../components/Jumbotron';
+import './style.css';
 
 const Home = () => {
-    return (
+  return (
     <div>
-    <Jumbotron/>
+      <Jumbotron />
     </div>
-    )
-}
-
+  );
+};
 
 export default Home;
