@@ -4,6 +4,8 @@ import LoveEmote from '../../images/LoveEmote.png';
 import TearsEmote from '../../images/TearsEmote.png';
 import RageEmote from '../../images/RageEmote.png';
 import HypeEmote from '../../images/HypeEmote.png';
+import { connect } from 'react-redux';
+import { addBasket } from '../../actions/addAction';
 import './shop.css';
 
 const Shop = (props) => {
@@ -89,4 +91,4 @@ const Shop = (props) => {
   );
 };
 
-export default Shop;
+export default connect(null, { addBasket })(Shop);

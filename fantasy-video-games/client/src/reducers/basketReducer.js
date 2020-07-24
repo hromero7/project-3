@@ -9,31 +9,38 @@ const initialState = {
   basketNumbers: 0,
   cartCost: 0,
   products: {
-    ReaperHoodie: {
-      name: 'Reaper Hoodie',
-      tagName: 'ReaperHoodie',
-      price: 45.0,
+    ReaperEmote: {
+      name: 'Reaper Emote',
+      tagName: 'ReaperEmote',
+      price: 1000,
       numbers: 0,
       inCart: false,
     },
-    LoveHoodie: {
-      name: 'Love Hoodie',
-      tagName: 'LoveHoodie',
-      price: 45.0,
+    LoveEmote: {
+      name: 'Love Emote',
+      tagName: 'LoveEmote',
+      price: 1000,
       numbers: 0,
       inCart: false,
     },
-    TearsHoodie: {
-      name: 'Tears Hoodie',
-      tagName: 'TearsHoodie',
-      price: 45.0,
+    TearsEmote: {
+      name: 'Tears Emote',
+      tagName: 'TearsEmote',
+      price: 1000,
       numbers: 0,
       inCart: false,
     },
-    RageHoodie: {
-      name: 'Rage Hoodie',
-      tagName: 'RageHoodie',
-      price: 45.0,
+    RageEmote: {
+      name: 'Rage Emote',
+      tagName: 'RageEmote',
+      price: 1000,
+      numbers: 0,
+      inCart: false,
+    },
+    HypeEmote: {
+      name: 'Hype Emote',
+      tagName: 'HypeEmote',
+      price: 1000,
       numbers: 0,
       inCart: false,
     },
