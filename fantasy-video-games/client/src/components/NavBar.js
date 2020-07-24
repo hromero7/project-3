@@ -155,4 +155,8 @@ const NavBar = (props) => {
   );
 };
 
-export default NavBar;
+const mapStateToProps = (state) => ({
+  basketProps: state.basketState,
+});
+
+export default connect(mapStateToProps, { getNumbers })(NavBar);
