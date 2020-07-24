@@ -41,7 +41,7 @@ const NavBar = () => {
     return (
 <div>
 <nav className="navbar navbar-expand-lg navbar-dark">
-  <a className="navbar-brand" href="#"><img src={logo} width="50px"/></a>
+  <a className="navbar-brand" href="/"><img src={logo} width="50px"/></a>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
@@ -57,6 +57,16 @@ const NavBar = () => {
         <a className="nav-link" href="#">League</a>
       </li>
       </Link>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Streams
+        </a>
+        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item text-success" href="/codstream">Call Of Duty</a>
+          <a class="dropdown-item text-success" href="/fortnitestream">Fortnite</a>
+          <a class="dropdown-item text-success" href="/nbastream">NBA 2k</a>
+        </div>
+      </li>
       <Link to="/store">
       <li className="nav-item">
         <a className="nav-link" href="#">Store</a>

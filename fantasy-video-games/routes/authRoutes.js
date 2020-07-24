@@ -1,6 +1,5 @@
 const router = require("express").Router();
-const {User} = require('../models');
-const twitchApi = require("../twitchAPI/twitch");
+const {User} = require('../models/User');
 
 router.get("/user", (req,res)=> res.json("Hello Myles!"));
 router.post("/login", (req,res)=> {

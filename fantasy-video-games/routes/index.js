@@ -1,12 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const authRoutes = require("./authRoutes");
+const twitchRoutes = require("./twitch");
 
-router.get('/', (req,res) => {
-    res.send("server is up and running");
-});
-
-router.use(authRoutes);
-
+router.use("/auth",authRoutes);
+router.use("/twitch", twitchRoutes)
 
 module.exports = router;

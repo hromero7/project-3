@@ -4,13 +4,13 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const User = new Schema({
     username: String,
-    password: password
+    password: String
 })
 
 
 //model
 const Users = mongoose.model("Users", User);
 
-module.export = Users;
+module.exports = Users;
 
 

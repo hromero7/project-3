@@ -1,5 +1,44 @@
-p{
-    color: white;
-    font-size: xx-large;
-    margin: 50px;
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10vw;
+}
+
+.cod{
+    width:300px;
+    border: black 5px double;
+    font-family: 'Black Ops One', cursive;
+}
+
+.cod:hover{
+    box-shadow: 10px 30px 30px -1px rgba(7, 206, 40, 0.3);
+    margin-top:10px;
+    margin-right: 5px;
+}
+
+.fortnite{
+    width:300px;
+    border: black 5px double;
+    font-family: 'Ranchers', cursive;
+}
+
+.fortnite:hover{
+    box-shadow: 10px 30px 30px -1px rgba(207, 16, 175, 0.3);
+    margin-top:10px;
+    margin-right: 5px;
+}
+
+.nba{
+    width:350px;
+    font-family: 'Anton', sans-serif;
+    border: black 5px double;
+    font-size: 40px;
+}
+
+.nba:hover{
+    box-shadow: 10px 30px 30px -1px rgba(219, 11, 11, 0.3);
+    margin-top:10px;
+    margin-right: 5px;
 }
