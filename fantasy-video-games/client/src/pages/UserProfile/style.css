@@ -1,0 +1,11 @@
+.profile-container {
+    width: 90%;
+    margin: 5%;
+    margin-top: 20px;
+    background-color: #1f2833;
+   border-radius: 1rem;
+}
+
+.card {
+    background-color: #1f2833;
+}

@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import { getNumbers } from '../actions/getAction';
 import { Link } from 'react-router-dom';
 
+
 const NavBar = (props) => {
   console.log(props);
 
@@ -91,11 +92,13 @@ const NavBar = (props) => {
                 </a>
               </li>
             </Link>
+           <Link to="/profile">
             <li className='nav-item'>
               <a className='nav-link' href='#'>
                 Profile
               </a>
             </li>
+            </Link>
             <form className='form-inline my-2 my-lg-0'>
               <button
                 className='btn btn-outline-success my-2 my-sm-0'
