@@ -47,7 +47,7 @@ io.on('connection', (socket) => {
   })
 })
 
-app.use(router);
+app.use("/api",router);
 
 
 mongoose.connect('mongodb://localhost/fantasyvideogames', {

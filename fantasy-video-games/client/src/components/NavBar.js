@@ -78,6 +78,15 @@ const NavBar = (props) => {
                 </a>
               </li>
             </Link>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Streams
+              </a>
+           <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item text-success" href="/codstream">Call Of Duty</a>
+              <a class="dropdown-item text-success" href="/fortnitestream">Fortnite</a>
+              <a class="dropdown-item text-success" href="/nbastream">NBA 2k</a>
+           </div>
             <Link to='/shop'>
               <li className='nav-item'>
                 <a className='nav-link' href='#'>
