@@ -6,18 +6,25 @@ const jwt = require('jsonwebtoken');
 
 const User = require('../models/User');
 
+router.get('/', (req, res) => {
+    res.json({works : "good"})
+})
+
 router.post('/', (req,res) => {
+
+    //return res.json({ hello : "world"})
+
     const { first, last, username, email, password } = req.body;
 
     //validation
     if(!first || !last || !username || !email || !password){
-        return res.status(400).json({ msg: 'Please enter all fields.'})
+        return res.status(300).json({ error: true,  error_msg: 'Please enter all fields.'})
     }
 
     //check for existing user
     User.findOne({ email })
     .then(user => {
-        if(user) return res.status(400).json({ msg: 'User already exists.'});
+        if(user) return res.status(300).json({error: true, error_msg: 'User already exists.'});
 
         const newUser = new User({
             first,
@@ -34,6 +41,7 @@ router.post('/', (req,res) => {
                 newUser.password = hash;
                 newUser.save()
                 .then(user => {
+                    console.log("user is", user)
 
                     jwt.sign(
                         { id:user.id },

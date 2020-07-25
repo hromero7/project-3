@@ -8,22 +8,27 @@ const auth = require('../middleware/auth');
 const User = require('../models/User');
 
 router.post('/', (req,res) => {
-    const { email, password } = req.body;
+  
+
+    const username = req.body.username
+    const password = req.body.password
+
+    console.log("request body is", req.body)
 
     //validation
-    if(!email || !password){
-        return res.status(400).json({ msg: 'Please enter all fields.'})
+    if(!username || !password){
+        return res.status(300).json({ msg: 'Please enter all fields (auth).'})
     }
 
     //check for existing user
-    User.findOne({ email })
+    User.findOne({ username : username })
     .then(user => {
-        if(!user) return res.status(400).json({ msg: 'User does not exist.'});
+        if(!user) return res.status(300).json({ msg: 'User does not exist. (auth)'});
 
         //validate password
         bcrypt.compare(password, user.password)
         .then(isMatch => {
-            if(!isMatch) return res.status(400).json({ msg: 'Invalid credentials.' })
+            if(!isMatch) return res.status(300).json({ msg: 'Invalid credentials (auth)' })
 
             jwt.sign(
                 { id:user.id },

@@ -1,5 +1,28 @@
 import React from "react";
 
+
+
+// const ChatBox = () => {
+
+//   let user = JSON.parse(localStorage.getItem('user'))
+//   const [chats, setChat] = useState([])
+
+//   if(user){
+//     // render the chat box 
+//   } else {
+//     // dont do anything
+//   }
+
+//   return(
+//     <div>
+
+//     </div>
+//   )
+// }
+
+
+
+
 const Signup = () => {
     return (
         <form className="signup-form">

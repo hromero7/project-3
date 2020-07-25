@@ -19,8 +19,12 @@ const router = require("./routes/index")
 const app = express()
 const server = http.createServer(app);
 const io = socketio(server);
+const cors = require('cors')
+
+app.use(cors())
 app.use(express.json());
 
+//SOCKET.io
 io.on('connection', (socket) => {
   console.log("we have a new connection!!")
 
