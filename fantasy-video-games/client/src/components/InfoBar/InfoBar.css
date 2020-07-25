@@ -1,21 +1,24 @@
 .infoBar {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-between;
     background: #2979FF;
-    border-radius: 4px 4px 0 0;
+    /* border-radius: 4px 4px 0 0; */
     height: 60px;
     width: 100%;
     border-radius: 5px;
     margin-top: 8px;
+    position: relative;
+    top: -49px;
   }
   
   .leftInnerContainer {
-    flex: 0.5;
+    /* flex: 0.5; */
     display: flex;
     align-items: center;
-    margin-left: 5%;
-    color: white;
+    margin-left: 25%;
+    /* color: white; */
+    width: 100%;
   }
   
   .rightInnerContainer {

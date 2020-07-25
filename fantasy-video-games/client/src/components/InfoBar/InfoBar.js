@@ -7,11 +7,11 @@ import "./InfoBar.css";
 const InfoBar = ({ room }) => (
     <div className="infoBar">
         <div className="leftInnerContainer">
-            <img className="onlineIcon" src={onlineIcon}/>
-            <p>{room}</p>
+            {/* <img className="onlineIcon" src={onlineIcon}/> */}
+            <strong><p>Get ready to place your bets!</p></strong>
         </div>
         <div className="rightInnerContainer">
-            <a href="/"><img src={closeIcon} alt="close image" /></a>
+            {/* <a href="/"><img src={closeIcon} alt="close image" /></a> */}
         </div>
     </div>
 )
