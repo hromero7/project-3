@@ -1,0 +1,4 @@
+{
+    "MONGO_URI":"mongodb+srv://fvg123:gaming123@cluster0.6pojg.mongodb.net/fvg123?retryWrites=true&w=majority",
+    "jwtSecret": "fvg_myJwtSecret"
+}

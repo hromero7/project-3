@@ -11,6 +11,11 @@ router.get("/streams/:id", ({params}, res)=> {
     }).then(({data}) => {
         res.json(data.data)
         
+    }).catch((e) => {
+        res.status(300).json({
+            error : true, 
+            error_message : e
+        })
     })
 })
 

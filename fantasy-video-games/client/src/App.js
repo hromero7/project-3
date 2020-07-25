@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from 'react';
 // import logo from './logo.svg';
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,19 +10,28 @@ import Cart from './pages/Shop/Cart';
 import Chat from "./components/Chat/Chat";
 import SingIn from "./components/SignIn/SignIn";
 import Home from "./pages/Home/Home";
+
+import { Provider } from 'react-redux';
+import store from "./store";
+import { loadUser } from "./actions/authActions";
 import CodLeague from "./pages/League/codLeague/CodLeague";
 import FortniteLeague from "./pages/League/fortniteLeague/FortniteLeague";
 import NbaLeague from "./pages/League/nbaLeague/NbaLeague";
 import FortniteStream from "./pages/Streams/Fortnite/FortniteStream";
 import CodStream from "./pages/Streams/Cod/CodStream";
 import NbaStream from "./pages/Streams/Nba/NbaStream"
-import { Provider } from 'react-redux';
-import store from './store';
 import Profile from './pages/UserProfile/Profile';
 
 
 
 function App() {
+
+  useEffect(() => {
+    store.dispatch(loadUser());
+  }, []) 
+    
+  
+
   return (
     <Provider store={store}>
     <Router>

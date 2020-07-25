@@ -2,7 +2,16 @@ const express = require("express");
 const mongoose = require("mongoose");
 const socketio = require('socket.io');
 const http = require('http');
+const config = require('config');
 const { addUser, removeUser, getUser, getUsersInRoom } = require("./socket/users");
+
+const users = require("./routes/users");
+const auth = require("./routes/auth");
+const twitch = require('./routes/twitch')
+
+
+const db = config.get('MONGO_URI');
+
 
 const PORT = process.env.PORT || 3003;
 
@@ -11,7 +20,12 @@ const router = require("./routes/index")
 const app = express()
 const server = http.createServer(app);
 const io = socketio(server);
+const cors = require('cors')
 
+app.use(cors())
+app.use(express.json());
+
+//SOCKET.io
 io.on('connection', (socket) => {
   console.log("we have a new connection!!")
 
@@ -47,12 +61,15 @@ io.on('connection', (socket) => {
   })
 })
 
-app.use("/api",router);
+app.use(router);
+app.use('/api/users', users);
+app.use('/api/auth', auth);
+app.use('/api/twitch', twitch)
 
-
-mongoose.connect('mongodb://localhost/fantasyvideogames', {
+mongoose.connect(db , {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useCreateIndex: true
 
   
 });
