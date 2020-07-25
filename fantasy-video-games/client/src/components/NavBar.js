@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
 import { getNumbers } from '../actions/getAction';
 import { Link } from 'react-router-dom';
 
-
 const NavBar = (props) => {
   console.log(props);
 
@@ -78,53 +77,71 @@ const NavBar = (props) => {
                 </a>
               </li>
             </Link>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li class='nav-item dropdown'>
+              <a
+                class='nav-link dropdown-toggle'
+                href='#'
+                id='navbarDropdown'
+                role='button'
+                data-toggle='dropdown'
+                aria-haspopup='true'
+                aria-expanded='false'
+              >
                 Streams
               </a>
-           <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item text-success" href="/codstream">Call Of Duty</a>
-              <a class="dropdown-item text-success" href="/fortnitestream">Fortnite</a>
-              <a class="dropdown-item text-success" href="/nbastream">NBA 2k</a>
-           </div>
-            <Link to='/shop'>
-              <li className='nav-item'>
-                <a className='nav-link' href='#'>
-                  Shop
-                </a>
-              </li>
-            </Link>
-            <Link to='/cart'>
-              <li className='nav-item'>
-                <a className='nav-link' href='#'>
-                  <ion-icon name='basket'></ion-icon>Cart
-                </a>
-              </li>
-            </Link>
-           <Link to="/profile">
-            <li className='nav-item'>
-              <a className='nav-link' href='#'>
-                Profile
-              </a>
-            </li>
-            </Link>
-            <form className='form-inline my-2 my-lg-0'>
-              <button
-                className='btn btn-outline-success my-2 my-sm-0'
-                type='submit'
-                onClick={handleLogin}
+              <div
+                class='dropdown-menu bg-dark'
+                aria-labelledby='navbarDropdown'
               >
-                Login
-              </button>
+                <a class='dropdown-item text-success' href='/codstream'>
+                  Call Of Duty
+                </a>
+                <a class='dropdown-item text-success' href='/fortnitestream'>
+                  Fortnite
+                </a>
+                <a class='dropdown-item text-success' href='/nbastream'>
+                  NBA 2k
+                </a>
+              </div>
+              <Link to='/shop'>
+                <li className='nav-item'>
+                  <a className='nav-link' href='#'>
+                    Shop
+                  </a>
+                </li>
+              </Link>
+              <Link to='/cart'>
+                <li className='nav-item'>
+                  <a className='nav-link' href='#'>
+                    <ion-icon name='basket'></ion-icon>Cart
+                  </a>
+                </li>
+              </Link>
+              <Link to='/profile'>
+                <li className='nav-item'>
+                  <a className='nav-link' href='#'>
+                    Profile
+                  </a>
+                </li>
+              </Link>
+              <form className='form-inline my-2 my-lg-0'>
+                <button
+                  className='btn btn-outline-success my-2 my-sm-0'
+                  type='submit'
+                  onClick={handleLogin}
+                >
+                  Login
+                </button>
 
-              <button
-                className='btn btn-outline-success my-2 my-sm-0'
-                type='submit'
-                onClick={handleSignup}
-              >
-                Sign Up
-              </button>
-            </form>
+                <button
+                  className='btn btn-outline-success my-2 my-sm-0'
+                  type='submit'
+                  onClick={handleSignup}
+                >
+                  Sign Up
+                </button>
+              </form>
+            </li>
           </ul>
         </div>
       </nav>
@@ -138,9 +155,9 @@ const NavBar = (props) => {
         <div className='card' style={{ width: '400px', height: '400px' }}>
           <div className='card-body'>
             <h5 className='card-title'>Login</h5>
-            <p className='card-text'>
+            <div className='card-text'>
               <Login />
-            </p>
+            </div>
           </div>
         </div>
       </LoginModal>
@@ -154,9 +171,9 @@ const NavBar = (props) => {
         <div className='card' style={{ width: '500px', height: '500px' }}>
           <div className='card-body'>
             <h5 className='card-title'>Sign Up</h5>
-            <p className='card-text'>
+            <div className='card-text'>
               <Signup />
-            </p>
+            </div>
           </div>
         </div>
       </SignupModal>
