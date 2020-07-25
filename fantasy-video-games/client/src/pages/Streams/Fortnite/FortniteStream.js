@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getStreams } from "../../../utils/API";
+import "../styleStream.css"
 
 const FortniteStream = () => {
   const [streams, setStreams] = useState([]);

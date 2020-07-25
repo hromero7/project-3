@@ -6,7 +6,6 @@ import "./style.css";
 const Profile = () => {
     return (
         <div>
-            <NavBar />
         <div className="profile-container">
             <ProfileCard/>
         </div>

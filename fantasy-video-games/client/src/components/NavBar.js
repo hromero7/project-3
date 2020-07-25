@@ -77,6 +77,7 @@ const NavBar = (props) => {
                 </a>
               </li>
             </Link>
+            
             <li class='nav-item dropdown'>
               <a
                 class='nav-link dropdown-toggle'
@@ -103,6 +104,7 @@ const NavBar = (props) => {
                   NBA 2k
                 </a>
               </div>
+              </li>
               <Link to='/shop'>
                 <li className='nav-item'>
                   <a className='nav-link' href='#'>
@@ -141,7 +143,6 @@ const NavBar = (props) => {
                   Sign Up
                 </button>
               </form>
-            </li>
           </ul>
         </div>
       </nav>
