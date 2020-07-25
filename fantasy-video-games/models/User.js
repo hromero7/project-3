@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { Decimal128 } = require("bson");
 
 //schema
 const Schema = mongoose.Schema;
@@ -26,7 +27,7 @@ const UserSchema = new Schema({
         required: true
     },
     balance: {
-        type: Integer,
+        type: Number,
         default: 100000
     },
     description: {

@@ -7,6 +7,7 @@ const { addUser, removeUser, getUser, getUsersInRoom } = require("./socket/users
 
 const users = require("./routes/users");
 const auth = require("./routes/auth");
+const twitch = require('./routes/twitch')
 
 
 const db = config.get('MONGO_URI');
@@ -63,6 +64,7 @@ io.on('connection', (socket) => {
 app.use(router);
 app.use('/api/users', users);
 app.use('/api/auth', auth);
+app.use('/api/twitch', twitch)
 
 mongoose.connect(db , {
   useNewUrlParser: true,
