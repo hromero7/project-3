@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { auth } from "google-auth-library";
-
+import Chat from "../../../components/Chat/Chat"
+// import SignIn from "../../../components/SignIn/SignIn";
 
 const gapi = window.gapi;
 
@@ -89,6 +90,7 @@ const CodLeague = () => {
             src="https://www.youtube.com/embed/vgUUBQ4p6Qs?controls=0&autoplay=1&iv_load_policy=3&playsinline=0&origin=http://localhost:3000"
             frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
       </div>
+      <Chat/>
         </div>
       );
    

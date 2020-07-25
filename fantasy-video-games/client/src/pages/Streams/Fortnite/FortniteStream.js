@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getStreams } from "../../../utils/API";
 import "../styleStream.css"
+import Chat from "../../../components/Chat/Chat";
 
 const FortniteStream = () => {
   const [streams, setStreams] = useState([]);
@@ -26,6 +27,7 @@ const FortniteStream = () => {
                 Watch Live Stream
               </a>
             </div>
+            <Chat/>
           </div>
         })}
       </div>
