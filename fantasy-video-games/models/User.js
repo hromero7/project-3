@@ -25,6 +25,24 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
+    balance: {
+        type: Integer,
+        default: 100000
+    },
+    description: {
+        type: String,
+        default:"Welcome to my profile."
+    },
+    badges: {
+        type: Array,
+    },
+    emotes: {
+        type: Array
+    },
+    profile_pic : {
+        type: String,
+        default: "../../client/src/pages/assets/fvg2.png"
+    },
     register_date: {
         type: Date,
         default: Date.now()
