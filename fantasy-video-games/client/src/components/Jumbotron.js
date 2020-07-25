@@ -5,9 +5,9 @@ const Jumbotron = () => {
     return (
       <div className="jumbotron">
       <img className="backgroundImg" src={logo} alt="FVG Logo" width="400px"/>
-      <p className="lead1">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+      <p className="lead1">The Future of Betting.</p>
       <hr className="my-4"></hr>
-      <p className="lead1">It uses utility classNamees for typography and spacing to space content out within the larger container.</p>
+      <p className="lead1">Experience Professional E-Sports Like Never Before. Place Bets on Professional E-Sports Games and Tournaments.</p>
     </div>
         
     )

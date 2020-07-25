@@ -15,7 +15,7 @@ const CodStream = () => {
       <div className="row">
         {streams.map((item) => {
         const url = item.thumbnail_url.replace(/{width}/, 500).replace(/{height}/, 500)
-          return <div class="card col-md-3 col-sm-6">
+          return <div class="card stream-card col-md-3 col-sm-6">
             <img src={url} className="card-img-top" alt="..." />
             <div className="card-body">
               <h5 className="card-title">{item.title}</h5>

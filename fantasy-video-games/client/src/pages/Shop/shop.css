@@ -2,6 +2,8 @@ div.container {
   width: 70%;
   padding: 3% 0;
   margin-top: 5%;
+  margin-bottom: 5%;
+  background-color: #c5c6c7;
 }
 
 .cart ion-icon {
@@ -19,7 +21,8 @@ div.container {
 
 .addToCart {
   width: 100%;
-  background-color: darkgrey;
+  background-color: #1f2833;
+  color: #66fcf1;
   transition: all 0.3s ease-in-out;
   opacity: 0;
   cursor: pointer;
@@ -39,15 +42,19 @@ div.container {
 /* ----------------- CART PAGE --------------- */
 
 .container-products {
-  max-width: 650px;
+  max-width: 70%;
+  padding: 20px;
+  border-radius: 1rem;
   justify-content: space-around;
   margin: 0 auto;
   margin-top: 50px;
+  background-color: #1f2833;
+  color: white;
 }
 
 .container-products ion-icon {
   font-size: 25px;
-  color: blue;
+  color: #66fcf1;
   margin-left: 10px;
   margin-right: 10px;
   cursor: pointer;
