@@ -19,6 +19,7 @@ class Chat extends React.Component  {
         this.state = {
             message : "",
             messages : [],
+            balance: 100000,
             user : JSON.parse(localStorage.getItem('user')),
             // bet: JSON.parse(localStorage)
         }
@@ -33,7 +34,7 @@ class Chat extends React.Component  {
     componentDidMount(){
         if(this.state) {
        
-             window.socket.emit('join', { name : this.state.user.username, room : 'cod'})
+             window.socket.emit('join', { name : this.state.user.username, room : 'cod', balance: this.state.balance})
 
             // 
             window.socket.on('message', (message) => {
@@ -68,7 +69,7 @@ class Chat extends React.Component  {
             let m = {
                 user : message.user, 
                 text : message.text.message,
-                bet: message.user.balance
+                balance: this.state.balance
             }
             let mList = []
             mList.push(m)
@@ -80,7 +81,7 @@ class Chat extends React.Component  {
             let m = {
                 user : message.user, 
                 text : message.text.message,
-                bet: message.user.balance
+                balance: this.state.balance
             }
       
             let mList =  []
@@ -105,17 +106,35 @@ class Chat extends React.Component  {
         })
     }
 
+     handleBet(balance) {
+        // newBalance= parseInt(this.state.balance)-100
+        // console.log(newBalance)
+        this.setState({balance: this.state.balance-100})
+    }
+
     render(){
 
       
         console.log("rendering")
         return(
             <div className="outerContainer">
-                <div className="container" style={{position:"absolute", top:"124px", right: "104px", width: "445px", height:"353px"}}>
+                <div className="container" style={{position:"absolute", top:"124px", right: "104px", width: "445px", height:"353px", backgroundColor: "#1f2833"}}>
                     <InfoBar room={this.state.room}/>
-                    <Messages messages={this.state.messages} name={this.state.user} balance={this.state.bet}/>
+                    <button 
+                    style={{
+                        backgroundColor:"green", 
+                        borderRadius:"5px",
+                        marginRight: "5%",
+                        marginLeft: "75%",
+                        top: "-37px",
+                        position: "relative"
+                        }} onClick={() => this.handleBet()}>Bet +100</button>
+
+                    <Messages messages={this.state.messages} name={this.state.user} balance={this.state.balance}/>
+
                     <Input message={this.state.message} setMessage={this.setMessage} sendMessage={this.sendMessage}/>
                 </div>
+                
             </div>
         )
     }

@@ -29,9 +29,9 @@ app.use(express.json());
 io.on('connection', (socket) => {
   console.log("we have a new connection!!")
 
-  socket.on('join', ({ name, room })=> {
+  socket.on('join', ({ name, room, balance })=> {
     console.log("new user joined!")
-    const { error, user } = addUser({ id: socket.id, name, room });
+    const { error, user } = addUser({ id: socket.id, name, room, balance });
 
     if(error){
       socket.emit("error", error)

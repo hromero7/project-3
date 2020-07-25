@@ -6,7 +6,7 @@ const addUser = (args) => {
   
     name = args.name.trim().toLowerCase();
     room = args.room.trim().toLowerCase();
-
+    balance = 100000;
 
 
     const existingUser = users.find((user) => user.room === room && user.name === name);
@@ -16,7 +16,7 @@ const addUser = (args) => {
         return { error: 'Username is taken', user : null };
     }
 
-    const user = { id : args.id, name : args.name, room : args.room };
+    const user = { id : args.id, name : args.name, room : args.room, balance: args.balance };
 
     users.push(user);
 
