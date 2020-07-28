@@ -1,0 +1,79 @@
+.jumbotron {
+    background-color: transparent;
+    color: #66FCF1;
+    margin: 0;
+
+    
+}
+
+.backgroundImg {
+margin-top: 0;
+margin-bottom: 20px;
+position: relative;
+top: -50px;
+animation-name: backgroundImg;
+animation-duration: 60s;
+animation-fill-mode: forwards;
+}
+
+@keyframes backgroundImg{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+.navbar {
+    margin: 0;
+    background-color: #0b0c10;
+}
+
+.login-form {
+    margin: 30px;
+}
+.signup-form {
+    text-align: left;
+}
+
+.display-4 {
+    font-size: 150px;
+    font-weight: bolder;
+}
+
+.btn {
+    margin: 2px;
+    background-color: #1f2833;
+    border-color: #45a29e;
+}
+
+body {
+    background-image: url("../assets/background-fvg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.homeVideo{
+    position: absolute;
+    margin-left: 19vw;
+    margin-top: 5vw;
+    border: double 5px black;
+    animation-name: homeVideo;
+    animation-duration: 35s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes homeVideo {
+    0% {opacity: 1;}
+    100%{opacity: 0;}
+}
+
+.lead1{
+    animation-name: lead1;
+    opacity: 0;
+    animation-delay: 31s;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes lead1{
+    0% {opacity: 0;}
+    100%{opacity: 1;}
+}
