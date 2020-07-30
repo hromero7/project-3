@@ -42,62 +42,39 @@ function getAuth(user){
 // import SignupModal from 'react-awesome-modal';
 
 const NavBar = (props) => {
-  console.log(props);
+  // const [userInfo, setUserInfo] = useState({
+  //   username: "",
+  //   firstName: "",
+  //   lastName: "",
+  //   email: "",
+  //   balance: "",
+  //   description: "",
+  //   badges: "",
+  //   emotes: "",
+  //   profilePic: "",
+  // });
+
+  // useEffect(() => {
+  //   setUserInfo({
+  //     username: props.auth.user.username,
+  //     firstName: props.auth.user.first,
+  //     lastName: props.auth.user.last,
+  //     email: props.auth.user.email,
+  //     balance: props.auth.user.balance,
+  //     description: props.auth.user.description,
+  //     badges: props.auth.user.badges,
+  //     emotes: props.auth.user.emotes,
+  //     profilePic: props.auth.user.profile_pic
+  //   });
+  // },[getAuth]);
+
+  console.log("navar prpps are", props);
 
   let u  =  JSON.parse( localStorage.getItem('user') )
   console.log(u)
   // setting state for both login and sign up modals
   const [loginVisible, setLoginVisible] = useState(false);
   const [signupVisible, setSignupVisible] = useState(false);
-
-  // login modal functions
-
-  // const handleLogin = (e) => {
-  //   e.preventDefault();
-  //   openModal();
-  // };
-  // const openModal = () => {
-  //   setLoginVisible(true);
-  // };
-  // const closeModal = () => {
-  //   setLoginVisible(false);
-  // };
-
-  // sign up modal functions
-
-  // const handleSignup = (e) => {
-  //   e.preventDefault();
-  //   openSignup();
-  // };
-  // const openSignup = () => {
-  //   setSignupVisible(true);
-  // };
-  // const closeSignup = () => {
-  //   setSignupVisible(false);
-  // };
-
-//     return (
-// <div>
-// <nav className="navbar navbar-expand-lg navbar-dark">
-//   <a className="navbar-brand" href="#"><img src={logo} width="50px"/></a>
-//   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-//     <span className="navbar-toggler-icon"></span>
-//   </button>
-//   <div className="collapse navbar-collapse" id="navbarNav">
-//     <ul className="navbar-nav">
-//       <li className="nav-item active">
-//         <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-//       </li>
-//       <li className="nav-item">
-//         <a className="nav-link" href="#">Betting</a>
-//       </li>
-//       <li className="nav-item">
-//         <a className="nav-link" href="#">Store</a>
-//       </li>
-//       <li className="nav-item">
-//         <a className="nav-link" href="#">Profile</a>
-//       </li>
-//       <form className="form-inline my-2 my-lg-0">
       
       
 
@@ -109,8 +86,10 @@ const NavBar = (props) => {
 //  <LoginModal
   useEffect(() => {
     getNumbers();
+    
   }, []);
   return (
+  // <UserContext.Provider value={userInfo}>
     <div>
       <nav className='navbar navbar-expand-lg navbar-dark'>
         <a className='navbar-brand' href='#'>
@@ -228,6 +207,7 @@ const NavBar = (props) => {
             </div>
           </div>*/}
     </div> 
+    // </UserContext.Provider>
       // </LoginModal> 
 //  <SignupModal
 //       </LoginModal>
