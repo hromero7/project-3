@@ -34,17 +34,53 @@ function getAuth(user){
 
 
 const NavBar = (props) => {
-  console.log(props);
+  // const [userInfo, setUserInfo] = useState({
+  //   username: "",
+  //   firstName: "",
+  //   lastName: "",
+  //   email: "",
+  //   balance: "",
+  //   description: "",
+  //   badges: "",
+  //   emotes: "",
+  //   profilePic: "",
+  // });
+
+  // useEffect(() => {
+  //   setUserInfo({
+  //     username: props.auth.user.username,
+  //     firstName: props.auth.user.first,
+  //     lastName: props.auth.user.last,
+  //     email: props.auth.user.email,
+  //     balance: props.auth.user.balance,
+  //     description: props.auth.user.description,
+  //     badges: props.auth.user.badges,
+  //     emotes: props.auth.user.emotes,
+  //     profilePic: props.auth.user.profile_pic
+  //   });
+  // },[getAuth]);
+
+  console.log("navar prpps are", props);
 
   let u  =  JSON.parse( localStorage.getItem('user') )
   console.log(u)
   const [loginVisible, setLoginVisible] = useState(false);
   const [signupVisible, setSignupVisible] = useState(false);
+      
+      
 
+      {/* </form>
+      
+    </ul>
+  </div>
+</nav> */}
+//  <LoginModal
   useEffect(() => {
     getNumbers();
+    
   }, []);
   return (
+  // <UserContext.Provider value={userInfo}>
     <div>
       <nav className='navbar navbar-expand-lg navbar-dark'>
         <a className='navbar-brand' href='/'>
@@ -135,7 +171,27 @@ const NavBar = (props) => {
       </nav>
       
     </div> 
-      
+
+    // </UserContext.Provider>
+      // </LoginModal> 
+//  <SignupModal
+//       </LoginModal>
+//       <SignupModal
+//         visible={signupVisible}
+//         width='500'
+//         height='500'
+//         effect='fadeInUp'
+//         onClickAway={() => closeSignup()}
+//       >
+//         <div className='card' style={{ width: '500px', height: '500px' }}>
+//           <div className='card-body'>
+//             <h5 className='card-title'>Sign Up</h5>
+//             <div className='card-text'>
+//               <Signup />
+//             </div>
+//           </div>
+//         </div>
+      // </SignupModal> 
 
   );
 };

@@ -32,8 +32,13 @@ class Chat extends React.Component  {
     }
 
     componentDidMount(){
-        if(this.state) {
-       
+         if (this.state.user === null) {
+             alert("You must be logged in to access the league page");
+             window.location.replace("/league")
+            console.log("chat js console log -- hello");
+        } 
+        else if(this.state) {
+            // console.log("chat js console", this.state)
              window.socket.emit('join', { name : this.state.user.username, room : 'cod', balance: this.state.balance})
 
             // 
