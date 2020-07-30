@@ -3,11 +3,29 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const config = require('config');
 const jwt = require('jsonwebtoken');
+let path = require('path')
 
 const User = require('../models/User');
 
 router.get('/', (req, res) => {
     res.json({works : "good"})
+})
+
+router.get("/user/:id", (req, res) => {
+    console.log("id is", req.params.id)
+    User.findOne( {email : req.params.id}, (user, err) => {
+        if(err){
+            res.status(300).json(err)
+        } else {
+            res.json(user)
+        }
+    })
+})
+
+router.get('/user/pic/:id', (req, res) => {
+    let p = path.resolve(__dirname + '/../client/src/pages/assets/' + req.params.id + ".jpg")
+    console.log("the path is", p)
+    res.sendFile( p)
 })
 
 router.post('/', (req,res) => {

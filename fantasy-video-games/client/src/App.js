@@ -10,7 +10,6 @@ import Cart from './pages/Shop/Cart';
 import Chat from "./components/Chat/Chat";
 import SingIn from "./components/SignIn/SignIn";
 import Home from "./pages/Home/Home";
-
 import { Provider } from 'react-redux';
 import store from "./store";
 import { loadUser } from "./actions/authActions";
@@ -36,6 +35,7 @@ function App() {
     <Provider store={store}>
     <Router>
       <div className="App">
+   
         <NavBar />
         <Switch>
           <Route exact path="/" component={Home} />
@@ -52,6 +52,7 @@ function App() {
           <Route path="/fortnitestream" component={FortniteStream} />
           <Route path="/nbastream" component={NbaStream} />
         </Switch>
+      
       </div>
 
     </Router>
