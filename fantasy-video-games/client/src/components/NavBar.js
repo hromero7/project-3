@@ -11,9 +11,6 @@ import { getNumbers } from '../actions/getAction';
 import { Link } from 'react-router-dom';
 
 
-//import { getUser } from "../../../socket/users";
-
-
 
 function getAuth(user){
   if(user){
@@ -26,9 +23,7 @@ function getAuth(user){
   } else {
     return(
       <div>
-{/* <button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick={handleLogin}>Login</button> */}
 <LoginModal/>
- {/* <button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick={handleSignup}>Sign Up</button> */}
  <RegisterModal/>
       </div>
  
@@ -36,10 +31,7 @@ function getAuth(user){
   }
 
 }  
-// setting state for both login and sign up modals
-// import logo from '../pages/assets/fvg2.png';
-// import LoginModal from 'react-awesome-modal';
-// import SignupModal from 'react-awesome-modal';
+
 
 const NavBar = (props) => {
   // const [userInfo, setUserInfo] = useState({
@@ -72,7 +64,6 @@ const NavBar = (props) => {
 
   let u  =  JSON.parse( localStorage.getItem('user') )
   console.log(u)
-  // setting state for both login and sign up modals
   const [loginVisible, setLoginVisible] = useState(false);
   const [signupVisible, setSignupVisible] = useState(false);
       
@@ -92,7 +83,7 @@ const NavBar = (props) => {
   // <UserContext.Provider value={userInfo}>
     <div>
       <nav className='navbar navbar-expand-lg navbar-dark'>
-        <a className='navbar-brand' href='#'>
+        <a className='navbar-brand' href='/'>
           <img src={logo} width='50px' />
         </a>
         <button
@@ -172,41 +163,15 @@ const NavBar = (props) => {
                 </li>
               </Link>
               <form className='form-inline my-2 my-lg-0'>
-                {/* <button
-                  className='btn btn-outline-success my-2 my-sm-0'
-                  type='submit'
-                  onClick={handleLogin}
-                >
-                  Login
-                </button>
-
-                <button
-                  className='btn btn-outline-success my-2 my-sm-0'
-                  type='submit'
-                  onClick={handleSignup}
-                >
-                  Sign Up
-                </button> */}
+              
                 {getAuth(u)}
               </form>
           </ul>
         </div>
       </nav>
-      {/* <LoginModal
-        visible={loginVisible}
-        width='400'
-        height='400'
-        effect='fadeInUp'
-        onClickAway={() => closeModal()}
-      >
-        <div className='card' style={{ width: '400px', height: '400px' }}>
-          <div className='card-body'>
-            <h5 className='card-title'>Login</h5>
-            <div className='card-text'>
-              <Login />
-            </div>
-          </div>*/}
+      
     </div> 
+
     // </UserContext.Provider>
       // </LoginModal> 
 //  <SignupModal
@@ -227,16 +192,7 @@ const NavBar = (props) => {
 //           </div>
 //         </div>
       // </SignupModal> 
-      
 
-
-// const mapStateToProps = state => ({
-//   auth: state.auth
-// })
-
-// export default connect(mapStateToProps, null)(NavBar);
-//       </SignupModal>
-//     </div>
   );
 };
   

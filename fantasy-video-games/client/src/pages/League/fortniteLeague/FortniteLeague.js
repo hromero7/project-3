@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { auth } from "google-auth-library";
+import Chat from "../../../components/Chat/Chat";
 
 
 const gapi = window.gapi;
@@ -88,16 +89,13 @@ const FortniteLeague = () => {
           <iframe id="ytplayer" type="text/html" width="640" height="360" 
             src="https://www.youtube.com/embed/wgII4GFqiVg?controls=0&autoplay=1&iv_load_policy=3&playsinline=0&origin=http://localhost:3000"
             frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+
+          <Chat />
+          
       </div>
         </div>
       );
    
-
-    // return (
-    //     <div>
-    //         {videos}
-    //     </div>
-    // )
 };
 
 export default FortniteLeague;
