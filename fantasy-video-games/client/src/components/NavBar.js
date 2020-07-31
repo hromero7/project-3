@@ -16,7 +16,7 @@ function getAuth(user){
   if(user){
     return (
        <div className="row">
-         <h4 style={{ color:"white", marginTop: "4px", marginLeft:"28px"}}>Welcome {user.username}!</h4>
+         <h4 className="greeting" style={{ color:"white", marginTop: "4px", marginLeft:"28px"}}>Welcome {user.username}!</h4>
          <Logout />
         </div> 
        )
