@@ -5,9 +5,15 @@ import { useState, useEffect} from 'react'
 
 const ProfileCard = (user) => {
 
-
     let u = JSON.parse( localStorage.getItem('user'))
+    console.log(u)
+    if (u === null) {
+        alert("You must be logged in to view your profile");
+        window.location.replace("/");
+       
+    } else {
 
+    
 
     //let user = JSON.parse(localStorage.getItem("user"));
     console.log("profile card is", user);
@@ -22,6 +28,7 @@ const ProfileCard = (user) => {
 
 </div>
     )
+    }
 }
 
 export default ProfileCard;
