@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { auth } from "google-auth-library";
-import Chat from "../../../components/Chat/Chat"
+import Chat from "../../../components/Chat/Chat";
 // import SignIn from "../../../components/SignIn/SignIn";
 
 const gapi = window.gapi;
 
-
-var authenticate = function() {
+var authenticate = function () {
   return gapi.auth2
     .getAuthInstance()
     .signIn({ scope: "https://www.googleapis.com/auth/youtube.force-ssl" })
@@ -18,8 +17,8 @@ var authenticate = function() {
         console.error("Error signing in", err);
       }
     );
-}
-var loadClient = function() {
+};
+var loadClient = function () {
   gapi.client.setApiKey("AIzaSyAD1G4_0RzexQcDaekIRO1J2HMKF9EmPEo");
   return gapi.client
     .load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
@@ -31,18 +30,18 @@ var loadClient = function() {
         console.error("Error loading GAPI client for API", err);
       }
     );
-}
+};
 
-var execute = function() {
+var execute = function () {
   return gapi.client.youtube.search
     .list({
       part: ["snippet"],
       eventType: "live",
       maxResults: 25,
       q: "fortnite",
-      "regionCode": "US",
+      regionCode: "US",
       type: ["video"],
-      "videoEmbeddable": "any"
+      videoEmbeddable: "any",
     })
     .then(
       function (response) {
@@ -53,7 +52,7 @@ var execute = function() {
         console.error("Execute error", err);
       }
     );
-}
+};
 gapi.load("client:auth2", function () {
   gapi.auth2.init({
     client_id:
@@ -61,39 +60,36 @@ gapi.load("client:auth2", function () {
   });
 });
 
-var a = function(){
-    authenticate().then(loadClient);
-}
-
-
-
+var a = function () {
+  authenticate().then(loadClient);
+};
 
 const CodLeague = () => {
-        
-    return (
-
-        <div>
-          <button 
-            onClick={a}
-            style={{display:"none"}}
-          >
-            authorize and load
-          </button>
-          <button
-            onClick={execute}
-            style={{display:"none"}}
-          >
-            execute
-          </button>
-            <div className="streamVideo" style={{marginRight:"44vw", marginTop:"8vw"}}>
-          <iframe id="ytplayer" type="text/html" width="640" height="360" 
-            src="https://www.youtube.com/embed/vgUUBQ4p6Qs?controls=0&autoplay=1&iv_load_policy=3&playsinline=0&origin=http://localhost:3000"
-            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+  return (
+    <div>
+      <button onClick={a} style={{ display: "none" }}>
+        authorize and load
+      </button>
+      <button onClick={execute} style={{ display: "none" }}>
+        execute
+      </button>
+      <div
+        className="streamVideo"
+        style={{ marginRight: "44vw", marginTop: "8vw" }}
+      >
+        <iframe
+          id="ytplayer"
+          type="text/html"
+          width="640"
+          height="360"
+          src="https://www.youtube.com/embed/vgUUBQ4p6Qs?controls=0&autoplay=1&iv_load_policy=3&playsinline=0&origin=http://localhost:3000"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        ></iframe>
       </div>
-      <Chat/>
-        </div>
-      );
-   
+      <Chat />
+    </div>
+  );
 };
 
 export default CodLeague;

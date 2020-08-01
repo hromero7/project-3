@@ -3,7 +3,6 @@ import { auth } from "google-auth-library";
 import Chat from "../../../components/Chat/Chat";
 import config from "../config";
 
-
 // const gapi = window.gapi;
 
 // var authenticate = function() {
@@ -71,17 +70,15 @@ const NbaLeague = () => {
   // const result = 10;
 
   // var finalURL = `https://www.googleapis.com/youtube/v3/search?key=${API}&channelId=${channelID}`
- useEffect(()=> {
-   const { api_key, channel_id} = config;
-   const apiCall = `https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${channel_id}&key=${api_key}`;
-   fetch(apiCall)
-   .then(result =>result.json())
-   .then(data => {
-     console.log(data);
-   })
- });
-
- 
+  useEffect(() => {
+    const { api_key, channel_id } = config;
+    const apiCall = `https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${channel_id}&key=${api_key}`;
+    fetch(apiCall)
+      .then((result) => result.json())
+      .then((data) => {
+        console.log(data);
+      });
+  });
 
   return (
     <div>
@@ -110,9 +107,8 @@ const NbaLeague = () => {
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         ></iframe>
-
-        <Chat />
       </div>
+      <Chat />
     </div>
   );
 };
