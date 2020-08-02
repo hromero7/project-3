@@ -12,6 +12,12 @@ router.put("/balance/:id", (req,res) => {
     .then(data=> console.log(data))
 })
 
+router.put("/emotes/:id", (req,res) => {
+    User.findByIdAndUpdate(req.params.id,  {emotes: req.body.emote})
+    .then(data=> console.log(data))
+})
+
+
 router.get('/', (req, res) => {
     res.json({works : "good"})
 })

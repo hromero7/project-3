@@ -103,7 +103,7 @@ class Chat extends React.Component {
 
   handleBetToggle = () => {
     if (this.state.betting) {
-      updateUserBalance("5f1f9aa413b86c750e0da70c", +this.state.betInput);
+      updateUserBalance(this.state.user.id, +this.state.betInput);
     }
     this.setState({ betting: !this.state.betting });
   };
