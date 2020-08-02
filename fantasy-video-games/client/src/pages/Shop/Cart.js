@@ -1,6 +1,7 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { connect } from 'react-redux';
 import { productQuantity, clearProduct } from '../../actions/productQuantity';
+import { updateUserBalance } from "../../utils/API";
 
 import ReaperEmote from '../../images/ReaperEmote.png';
 import LoveEmote from '../../images/LoveEmote.png';
@@ -10,8 +11,10 @@ import HypeEmote from '../../images/HypeEmote.png';
 
 function Cart({ basketProps, productQuantity, clearProduct }) {
   console.log(basketProps);
+  const [purchasedItems, setPurchasedItems] = useState([]);
 
   let productsInCart = [];
+  let purchased = [];
 
   Object.keys(basketProps.products).forEach(function (item) {
     console.log(item);
@@ -36,6 +39,39 @@ function Cart({ basketProps, productQuantity, clearProduct }) {
       return HypeEmote;
     }
   };
+
+  function handleCheckout(){
+    let user = JSON.parse(localStorage.getItem('user'));
+    
+    let price = basketProps.cartCost;
+    updateUserBalance(user.id, -price)
+
+    let purchasedProducts = basketProps.products;
+    // console.log(basketProps.products.inCart === true);
+    
+    // console.log(purchased, "LINE58");
+    // setPurchasedItems(basketProps.products[0])
+    // console.log(basketProps, "line47");
+    addToProfile(purchasedProducts);
+    
+  };
+
+  function addToProfile(purchasedProducts) {
+  console.log(purchasedProducts.ReaperEmote.inCart, "LINE 60!!");
+    if (purchasedProducts.ReaperEmote.inCart === true) {
+       purchased.push(purchasedProducts.ReaperEmote.tagName);
+    } else if (purchasedProducts.LoveEmote.inCart === true) {
+       purchased.push(LoveEmote);
+    } else if (purchasedProducts.TearsEmote.inCart === true) {
+       purchased.push(TearsEmote);
+    } else if (purchasedProducts.RageEmote.inCart === true) {
+       purchased.push(RageEmote);
+    } else if (purchasedProducts.HypeEmote.inCart === true) {
+       purchased.push(HypeEmote);
+    };
+    console.log(purchased, "LINE 72!111!!");
+  }
+
   productsInCart = productsInCart.map((product, index) => {
     console.log('My product is');
     console.log(product);
@@ -80,6 +116,7 @@ function Cart({ basketProps, productQuantity, clearProduct }) {
       <div className='basketTotalContainer'>
         <h4 className='basketTotalTitle'>Basket Total</h4>
         <h4 className='basketTotal'>{basketProps.cartCost}.00</h4>
+        <button onClick={handleCheckout}>Checkout</button>
       </div>
     </div>
   );
