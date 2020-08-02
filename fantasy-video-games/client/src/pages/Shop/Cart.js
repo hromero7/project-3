@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { connect } from 'react-redux';
 import { productQuantity, clearProduct } from '../../actions/productQuantity';
-import { updateUserBalance } from "../../utils/API";
+import { updateUserBalance, updateUserEmotes } from "../../utils/API";
 
 import ReaperEmote from '../../images/ReaperEmote.png';
 import LoveEmote from '../../images/LoveEmote.png';
@@ -52,24 +52,34 @@ function Cart({ basketProps, productQuantity, clearProduct }) {
     // console.log(purchased, "LINE58");
     // setPurchasedItems(basketProps.products[0])
     // console.log(basketProps, "line47");
-    addToProfile(purchasedProducts);
+    addToProfile(purchasedProducts, user);
     
   };
 
-  function addToProfile(purchasedProducts) {
+  function addToProfile(purchasedProducts, user) {
+   let id = user.id;
   console.log(purchasedProducts.ReaperEmote.inCart, "LINE 60!!");
     if (purchasedProducts.ReaperEmote.inCart === true) {
        purchased.push(purchasedProducts.ReaperEmote.tagName);
-    } else if (purchasedProducts.LoveEmote.inCart === true) {
-       purchased.push(LoveEmote);
-    } else if (purchasedProducts.TearsEmote.inCart === true) {
-       purchased.push(TearsEmote);
-    } else if (purchasedProducts.RageEmote.inCart === true) {
-       purchased.push(RageEmote);
-    } else if (purchasedProducts.HypeEmote.inCart === true) {
-       purchased.push(HypeEmote);
+    } 
+    if (purchasedProducts.LoveEmote.inCart === true) {
+       purchased.push(purchasedProducts.LoveEmote.tagName);
+    } 
+     if (purchasedProducts.TearsEmote.inCart === true) {
+       purchased.push(purchasedProducts.TearsEmote.tagName);
+    } 
+    if (purchasedProducts.RageEmote.inCart === true) {
+       purchased.push(purchasedProducts.RageEmote.tagName);
+    } 
+    if (purchasedProducts.HypeEmote.inCart === true) {
+       purchased.push(purchasedProducts.HypeEmote.tagName);
     };
+
+    updateUserEmotes(id, purchased);
     console.log(purchased, "LINE 72!111!!");
+    setPurchasedItems(purchased);
+    console.log(purchasedItems, "LINE 7800000");
+
   }
 
   productsInCart = productsInCart.map((product, index) => {
@@ -117,6 +127,7 @@ function Cart({ basketProps, productQuantity, clearProduct }) {
         <h4 className='basketTotalTitle'>Basket Total</h4>
         <h4 className='basketTotal'>{basketProps.cartCost}.00</h4>
         <button onClick={handleCheckout}>Checkout</button>
+        
       </div>
     </div>
   );
