@@ -7,6 +7,11 @@ let path = require('path')
 
 const User = require('../models/User');
 
+router.put("/balance/:id", (req,res) => {
+    User.findByIdAndUpdate(req.params.id, {$inc: {balance: req.body.change}})
+    .then(data=> console.log(data))
+})
+
 router.get('/', (req, res) => {
     res.json({works : "good"})
 })
@@ -49,7 +54,8 @@ router.post('/', (req,res) => {
             last,
             username,
             email,
-            password
+            password,
+            balance
         });
 
         //create salt & hash

@@ -4,6 +4,7 @@ const authRoutes = require("./authRoutes");
 const twitchRoutes = require("./twitch");
 
 router.use("/auth",authRoutes);
-router.use("/twitch", twitchRoutes)
+router.use("/twitch", twitchRoutes);
+
 
 module.exports = router;

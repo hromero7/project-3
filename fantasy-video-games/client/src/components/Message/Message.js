@@ -2,7 +2,7 @@ import React from 'react';
 
 import "./Message.css";
 
-const Message = ({ message: { text,user,balance  }, name }) => {
+const Message = ({ message: { text,user }, name }) => {
     let isSentByCurrentUser = false;
 
     const trimmedName = name;
@@ -18,7 +18,7 @@ const Message = ({ message: { text,user,balance  }, name }) => {
                 <p className="sentText pr-10">{trimmedName}</p>
                 <div className="messageBox backgroundBlue">
                     <p className="messageText colorWhite">{text}</p>
-                    <p className="messageText colorWhite">${balance}</p>
+                    
 
                 </div>
             </div>
@@ -27,7 +27,7 @@ const Message = ({ message: { text,user,balance  }, name }) => {
             <div className="messageContainer justifyStart">
                 <div className="messageBox backgroundLight">
                     <p className="messageText colorDark">{text}</p>
-                    <p className="messageText colorDark">${balance}</p>
+                    
 
                 </div>
                 <p className="sentText pl-10">{user}</p>
