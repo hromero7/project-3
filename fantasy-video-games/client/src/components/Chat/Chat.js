@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import queryString from "query-string";
-
+import Alert from 'react-bootstrap/Alert'
 import "./Chat.css"
 import InfoBar from '../InfoBar/InfoBar';
 import Input from '../Input/Input';
 import Messages from '../Messages/Messages';
-
-
-
 
 
 
@@ -21,6 +18,7 @@ class Chat extends React.Component  {
             messages : [],
             balance: 100000,
             user : JSON.parse(localStorage.getItem('user')),
+            errorMessage: "Oops! Looks like you need to login."
             // bet: JSON.parse(localStorage)
         }
         console.log("beginning state is", this.state)
@@ -32,6 +30,7 @@ class Chat extends React.Component  {
     }
 
     componentDidMount(){
+        
          if (this.state.user === null) {
              alert("You must be logged in to access the league page");
              window.location.replace("/league")
@@ -51,7 +50,7 @@ class Chat extends React.Component  {
             
         } else {
             console.log("cannot join user")
-        }
+        } 
 
     }
 
@@ -118,7 +117,7 @@ class Chat extends React.Component  {
     }
 
     render(){
-
+        
       
         console.log("rendering")
         return(
