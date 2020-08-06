@@ -4,6 +4,9 @@ import LoveEmote from '../../images/LoveEmote.png';
 import TearsEmote from '../../images/TearsEmote.png';
 import RageEmote from '../../images/RageEmote.png';
 import HypeEmote from '../../images/HypeEmote.png';
+import AcesBadge from '../../images/AcesBadge.png';
+import HighRollerBadge from '../../images/HighRollerBadge.png';
+import MoneyBadge from '../../images/MoneyBadge.png';
 import { connect } from 'react-redux';
 import { addBasket } from '../../actions/addAction';
 import './shop.css';
@@ -12,6 +15,50 @@ const Shop = (props) => {
   console.log(props);
   return (
     <div className='container'>
+      <div className='row mb-5'>
+        <div className='col'>
+          <div className='image'>
+            <img src={AcesBadge} alt='AcesBadge' />
+            <h3>Aces Badge</h3>
+            <h3>1,000</h3>
+            <a
+              onClick={() => props.addBasket('AcesBadge')}
+              className='addToCart cart1'
+              href='#'
+            >
+              Add to Cart
+            </a>
+          </div>
+        </div>
+        <div className='col'>
+          <div className='image'>
+            <img src={HighRollerBadge} alt='HighRollerBadge' />
+            <h3>High Roller Badge</h3>
+            <h3>10,000</h3>
+            <a
+              onClick={() => props.addBasket('HighRollerBadge')}
+              className='addToCart cart1'
+              href='#'
+            >
+              Add to Cart
+            </a>
+          </div>
+        </div>
+        <div className='col'>
+          <div className='image'>
+            <img src={MoneyBadge} alt='MoneyBadge' />
+            <h3>Money Badge</h3>
+            <h3>50,000</h3>
+            <a
+              onClick={() => props.addBasket('MoneyBadge')}
+              className='addToCart cart1'
+              href='#'
+            >
+              Add to Cart
+            </a>
+          </div>
+        </div>
+      </div>
       <div className='row'>
         <div className='col'>
           <div className='image'>
