@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect} from 'react'
 import logo from "../pages/assets/fvg.png";
 
 const ProfileCard = (user) => {
@@ -8,6 +9,7 @@ const ProfileCard = (user) => {
     alert("You must be logged in to view your profile");
     window.location.replace("/");
   } else {
+
     //let user = JSON.parse(localStorage.getItem("user"));
     console.log("profile card is", user);
     console.log(u.id);

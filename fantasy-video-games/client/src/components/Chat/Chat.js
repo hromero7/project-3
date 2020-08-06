@@ -106,6 +106,13 @@ class Chat extends React.Component {
     });
   }
 
+  handleBetToggle = () => {
+    if (this.state.betting) {
+      updateUserBalance(this.state.user.id, +this.state.betInput);
+    }
+    this.setState({ betting: !this.state.betting });
+  };
+
   render() {
     console.log("rendering");
     return (
@@ -116,7 +123,7 @@ class Chat extends React.Component {
             marginBottom: "78vw",
             marginRight: "104px",
             width: "445px",
-            height: "620px",
+            height: "500px",
             backgroundColor: "#1f2833",
           }}
         >

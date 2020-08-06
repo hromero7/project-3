@@ -12,6 +12,7 @@ router.put("/balance/:id", (req,res) => {
     .then(data=> console.log(data))
 })
 
+
 router.get("/userbalance/:id", (req,res) => {
     User.findById({userbalance: req.params.id}, (userB, err) => {
         if(err){
@@ -21,7 +22,12 @@ router.get("/userbalance/:id", (req,res) => {
         }
     })
 })
-   
+
+router.put("/emotes/:id", (req,res) => {
+    User.findByIdAndUpdate(req.params.id,  {emotes: req.body.emote})
+    .then(data=> console.log(data))
+})
+
 
 
 router.get('/', (req, res) => {
@@ -44,6 +50,7 @@ router.get('/user/pic/:id', (req, res) => {
     console.log("the path is", p)
     res.sendFile( p)
 })
+
 
 router.post('/', (req,res) => {
 
