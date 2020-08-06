@@ -4,6 +4,7 @@ import ProfileCard from "../../components/ProfileCard";
 import "./style.css";
 import BadgeList from "../../components/BadgeList";
 import EmoteList from "../../components/EmoteList";
+// import { response } from "express";
 
 
 
@@ -16,14 +17,16 @@ const Profile = () => {
         fetch('http://localhost:3003/api/users/user/' + u.email)
             .then(response => response.json())
             .then( (data)  => { 
-                console.log(data) 
+                console.log(data, "this is my data") 
                 setUser(data)
-
+                console.log(data.emotes, "line 21");
                 console.log("loaded user is", user)
+
             });
        
     }, [])
 
+    
 
 
 
@@ -34,7 +37,7 @@ const Profile = () => {
                 <ProfileCard user={user}/>
                 <BadgeList/>
                 <div></div>
-                <EmoteList/>
+                <EmoteList user={user}/>
             </div>
         </div>
     )
