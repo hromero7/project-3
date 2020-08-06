@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import queryString from "query-string";
 
 import "./Chat.css";
 import InfoBar from "../InfoBar/InfoBar";
 import Input from "../Input/Input";
 import Messages from "../Messages/Messages";
-import { updateUserBalance } from "../../utils/API";
+import { v4 as uuidv4 } from "uuid";
+
 
 class Chat extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class Chat extends React.Component {
       betting: false,
       betInput: "",
       user: JSON.parse(localStorage.getItem("user")),
-      // bet: JSON.parse(localStorage)
+      id: ""
     };
     console.log("beginning state is", this.state);
 
@@ -62,21 +63,24 @@ class Chat extends React.Component {
 
   setMessageList(message) {
     console.log("about to append message", message);
-
+    const uid = uuidv4();
     if (this.state.messages.length == 0) {
       let m = {
         user: message.user,
         text: message.text.message,
+        id: uid,
       };
       let mList = [];
       mList.push(m);
       this.setState({
         messages: mList,
+        id: uid
       });
     } else {
       let m = {
         user: message.user,
         text: message.text.message,
+        id: uid,
       };
 
       let mList = [];
@@ -86,6 +90,7 @@ class Chat extends React.Component {
       mList.push(m);
       this.setState({
         messages: mList,
+        id: uid
       });
       console.log("message list after appending", this.state.messages);
     }
@@ -100,13 +105,6 @@ class Chat extends React.Component {
       message: message,
     });
   }
-
-  handleBetToggle = () => {
-    if (this.state.betting) {
-      updateUserBalance("5f1f9aa413b86c750e0da70c", +this.state.betInput);
-    }
-    this.setState({ betting: !this.state.betting });
-  };
 
   render() {
     console.log("rendering");
@@ -123,36 +121,13 @@ class Chat extends React.Component {
           }}
         >
           <InfoBar room={this.state.room} />
-          {this.state.betting ? (
-            <input
-              value={this.state.betInput}
-              onChange={(e) => this.setState({ betInput: e.target.value })}
-              type="number"
-              placeholder="$0"
-              style={{
-                position: "relative",
-                width: "40%",
-                marginLeft: "100px",
-                marginTop: "-30px",
-              }}
-            />
-          ) : (
-            ""
-          )}
-          <button
-            style={{
-              backgroundColor: "green",
-              borderRadius: "5px",
-              marginRight: "5%",
-              marginLeft: "75%",
-              marginTop: "-30px",
-            }}
-            onClick={this.handleBetToggle}
-          >
-            {this.state.betting ? "Bet" : "Place Bet"}
-          </button>
 
-          <Messages messages={this.state.messages} name={this.state.user} />
+          <Messages
+            messages={this.state.messages}
+            name={this.state.user}
+            bet={this.state.user.id}
+            unique={this.state.id}
+          />
 
           <Input
             message={this.state.message}

@@ -12,6 +12,18 @@ router.put("/balance/:id", (req,res) => {
     .then(data=> console.log(data))
 })
 
+router.get("/userbalance/:id", (req,res) => {
+    User.findById({userbalance: req.params.id}, (userB, err) => {
+        if(err){
+            res.status(300).json(err)
+        } else {
+            res.json(userB)
+        }
+    })
+})
+   
+
+
 router.get('/', (req, res) => {
     res.json({works : "good"})
 })
