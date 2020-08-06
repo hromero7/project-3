@@ -118,7 +118,7 @@ class Chat extends React.Component {
             marginBottom: "78vw",
             marginRight: "104px",
             width: "445px",
-            height: "620px",
+            height: "500px",
             backgroundColor: "#1f2833",
           }}
         >

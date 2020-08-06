@@ -23,6 +23,7 @@ class RegisterModal extends Component {
     username: "",
     email: "",
     password: "",
+    balance: "",
     msg: null,
   };
 

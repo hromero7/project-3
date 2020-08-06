@@ -62,7 +62,9 @@ function Cart({ basketProps, productQuantity, clearProduct }) {
     // setPurchasedItems(basketProps.products[0])
     // console.log(basketProps, "line47");
     addToProfile(purchasedProducts, user);
-  }
+
+    window.location.replace("/cart");
+  };
 
   function addToProfile(purchasedProducts, user) {
     let id = user.id;
@@ -133,7 +135,12 @@ function Cart({ basketProps, productQuantity, clearProduct }) {
       <div className='basketTotalContainer'>
         <h4 className='basketTotalTitle'>Basket Total</h4>
         <h4 className='basketTotal'>{basketProps.cartCost}.00</h4>
-        <button onClick={handleCheckout}>Checkout</button>
+        <button 
+        style={{
+          backgroundColor: "#45a29e",
+          borderRadius: "10px",
+          marginLeft: "5px"}} onClick={handleCheckout}>Checkout</button>
+        
       </div>
     </div>
   );

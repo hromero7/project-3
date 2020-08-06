@@ -1,6 +1,5 @@
 import React from "react";
 import logo from "../pages/assets/fvg.png";
-
 import { useState, useEffect} from 'react'
 
 const ProfileCard = (user) => {
@@ -13,7 +12,7 @@ const ProfileCard = (user) => {
        
     } else {
 
-    
+
 
     //let user = JSON.parse(localStorage.getItem("user"));
     console.log("profile card is", user);
