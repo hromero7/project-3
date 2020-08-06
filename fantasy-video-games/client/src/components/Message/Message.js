@@ -1,11 +1,15 @@
 import React from 'react';
 
+
+
 import "./Message.css";
 
 const Message = ({ message: { text,user }, name }) => {
     let isSentByCurrentUser = false;
 
     const trimmedName = name;
+    
+    
 
     if(user === trimmedName) {
         isSentByCurrentUser = true;
@@ -14,11 +18,11 @@ const Message = ({ message: { text,user }, name }) => {
     return(
         isSentByCurrentUser
         ? (
+
             <div className="messageContainer justifyEnd">
                 <p className="sentText pr-10">{trimmedName}</p>
                 <div className="messageBox backgroundBlue">
                     <p className="messageText colorWhite">{text}</p>
-                    
 
                 </div>
             </div>

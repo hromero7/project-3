@@ -23,8 +23,3 @@ module.exports = router;
 
 
 
-// axios.post('https://id.twitch.tv/oauth2/token', {
-
-// })
-
-

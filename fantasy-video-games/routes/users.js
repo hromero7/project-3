@@ -12,10 +12,22 @@ router.put("/balance/:id", (req,res) => {
     .then(data=> console.log(data))
 })
 
+
+router.get("/userbalance/:id", (req,res) => {
+    User.findById({userbalance: req.params.id}, (userB, err) => {
+        if(err){
+            res.status(300).json(err)
+        } else {
+            res.json(userB)
+        }
+    })
+})
+
 router.put("/emotes/:id", (req,res) => {
     User.findByIdAndUpdate(req.params.id,  {emotes: req.body.emote})
     .then(data=> console.log(data))
 })
+
 
 
 router.get('/', (req, res) => {

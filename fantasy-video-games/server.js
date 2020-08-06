@@ -69,7 +69,7 @@ io.on('connection', (socket) => {
 app.use(router);
 app.use('/api/users', users);
 app.use('/api/auth', auth);
-app.use('/api/twitch', twitch)
+app.use('/api/twitch', twitch);
 
 mongoose.connect(db , {
   useNewUrlParser: true,
